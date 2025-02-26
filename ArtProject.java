@@ -13,15 +13,32 @@ class Shapes extends JPanel{
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.drawRect(super.getWidth()/2, super.getHeight()/2, 100, 125);
-        g.drawOval(super.getWidth()/3, super.getHeight()/4, 40, 20);
-        g.setColor(Color.blue);
-        g.drawArc(super.getWidth()/4, super.getHeight()/3, 232, 325, 90, 115);
-        g.setColor(Color.red);
-        g.fillRect(super.getWidth()/2, super.getHeight()/2, 100, 125);
-        g.setColor(Color.magenta);
-        g.fillOval(super.getWidth()/3, super.getHeight()/4, 40, 20);
+        //Nose
+        g.drawRect(super.getWidth()/2, super.getHeight()/2, 20, 80);
+
+        //Outer portions of eyes
+        g.drawOval(super.getWidth()/3, super.getHeight()/4, 20, 80);
+        g.drawOval(2 * super.getWidth()/3, super.getHeight()/4, 20, 80);
         
+        //Inner Portions of eyes
+        g.drawOval(super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
+        g.drawOval(2 * super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
+        
+        g.drawArc(super.getWidth()/3, 3 * super.getHeight()/4, 200, 100,180, 180);
+        g.setColor(Color.red);
+        g.fillArc(super.getWidth()/3, 3 * super.getHeight()/4, 200, 100, 180, 180);
+
+        //Coloring the nose
+        g.setColor(Color.ORANGE);
+        g.fillRect(super.getWidth()/2, super.getHeight()/2, 20, 80);
+
+        //Coloring the eyes and center of eyes
+        g.setColor(Color.WHITE);
+        g.fillOval(super.getWidth()/3, super.getHeight()/4, 20, 80);
+        g.fillOval(2 * super.getWidth()/3, super.getHeight()/4, 20, 80);
+        g.setColor(Color.blue);
+        g.fillOval(super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
+        g.fillOval(2 * super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
     }
 }
 public class ArtProject implements Runnable {
