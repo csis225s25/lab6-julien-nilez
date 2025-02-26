@@ -24,6 +24,7 @@ class Shapes extends JPanel{
         g.drawOval(super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
         g.drawOval(2 * super.getWidth()/3, (super.getHeight()/3 + super.getHeight()/4)/2, 15, 40);
         
+        //Smile
         g.drawArc(super.getWidth()/3, 3 * super.getHeight()/4, 200, 100,180, 180);
         g.setColor(Color.red);
         g.fillArc(super.getWidth()/3, 3 * super.getHeight()/4, 200, 100, 180, 180);
