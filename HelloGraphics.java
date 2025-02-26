@@ -26,7 +26,9 @@ class GraphicsPanel extends JPanel {
         FontMetrics fontMet = g.getFontMetrics();
         int strWidth = fontMet.stringWidth("Hello, Java Graphics World!");
         int getAsc = fontMet.getAscent();
-        g.drawString("Hello, Java Graphics World!", super.getWidth()/2 - strWidth/2, super.getHeight()/2 - getAsc/2);
+        g.drawString("Hello, Java Graphics World!", super.getWidth()/2 - strWidth/2, super.getHeight()/2 - getAsc);
+        Font newFont = new Font ("Goudy Old Style", Font.BOLD, 25);
+        super.setFont(newFont);
     }
 }
 
@@ -41,7 +43,7 @@ public class HelloGraphics implements Runnable {
         // the usual JFrame setup steps
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("HelloGraphics");
-        frame.setPreferredSize(new Dimension(0, 0));
+        frame.setPreferredSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // construct JPanel with a custom paintComponent method
