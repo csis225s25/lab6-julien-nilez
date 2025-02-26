@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * This program prints out Hello
+ * This program prints out Hello, Java Graphics World in a unique font!
  * 
  * @author Julien
  * @author Riley
@@ -23,10 +23,15 @@ class GraphicsPanel extends JPanel {
         // the Graphics object passed to this method has many methods
         // we can use to draw in the area of the panel, one of which
         // allows us to draw a String at a given x,y position
+        //This gets us the current font details
         FontMetrics fontMet = g.getFontMetrics();
+        //This gets us the string width
         int strWidth = fontMet.stringWidth("Hello, Java Graphics World!");
+        //This gets us the string height
         int getAsc = fontMet.getAscent();
+        //This draws the string
         g.drawString("Hello, Java Graphics World!", super.getWidth()/2 - strWidth/2, super.getHeight()/2 - getAsc);
+        //Setting our font details and applying
         Font newFont = new Font ("Goudy Old Style", Font.BOLD, 25);
         super.setFont(newFont);
     }

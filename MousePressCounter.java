@@ -12,13 +12,10 @@ import javax.swing.*;
  */
 
 public class MousePressCounter extends MouseAdapter implements Runnable, ActionListener {
-private JLabel counter;
-private int count;
-private JButton clear;
-
-
-
-
+    //Instance variables for class
+    private JLabel counter;
+    private int count;
+    private JButton clear;
 
     /**
      * The run method to set up the graphical user interface
@@ -32,18 +29,29 @@ private JButton clear;
         frame.setPreferredSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // construct JPanel with a custom paintComponent method
+        // construct JPanel to place other panels within
         JPanel panel = new JPanel(new BorderLayout());
         frame.add(panel);
+
+        //Listening for mouse input
         panel.addMouseListener(this);
+
+        //Initializing clicks to zero and adding the count to the label
         count = 0;
         counter = new JLabel("Mouse Press Count: " + count);
+
+        //Panel for count visualization
         JPanel panel1 = new JPanel();
         panel.add(panel1);
+
+        //Adding counter label to our panel that goes on main panel
         panel1.add(counter);
 
+        //Creating button for clearing the count
         clear = new JButton("Clear");
         clear.addActionListener(this);
+
+        //Adding clear to panel2 and assigning it to the bottom of the screen
         JPanel panel2 = new JPanel();
         panel.add(panel2, BorderLayout.SOUTH);
         panel2.add(clear);
@@ -55,11 +63,13 @@ private JButton clear;
     }
     @Override
     public void mouseClicked(MouseEvent e){
+        //Up our count and reset text to appropriate count
         count++;
         counter.setText("Mouse Press Count: " + count);
     }
     @Override
     public void actionPerformed(ActionEvent e){
+        //If the clear button is pressed, we decrement the count to 0
         if(e.getSource() == clear){
             count = 0;
             counter.setText("Mouse Press Count: " + count);
