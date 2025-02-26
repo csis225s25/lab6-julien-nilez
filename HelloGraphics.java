@@ -2,10 +2,10 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * Lab 6 starter example
+ * This program prints out Hello
  * 
- * @author Jim Teresco
- * @author Ira Goldstein
+ * @author Julien
+ * @author Riley
  * @version Spring 2025
  */
 
